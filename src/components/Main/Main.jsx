@@ -55,7 +55,7 @@ export default function Main() {
           <div id="carousel" className="self-center flex gap-10 items-center mt-4">
             <div>
               {techs.map((tech) => (
-                <img className="h-16" key={tech} src={`./src/assets/img/${tech}.png`} alt={tech} />
+                <img className="h-16" key={tech} src={`/src/assets/img/${tech}.png`} alt={tech} />
               ))}
             </div>
           </div>

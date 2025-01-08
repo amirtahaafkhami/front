@@ -52,6 +52,10 @@
   @keyframes move {
     to {
       transform: translate(calc(-50% - 1.5em));
-    }
+      -webkit-transform: translate(calc(-50% - 1.5em));
+      -moz-transform: translate(calc(-50% - 1.5em));
+      -ms-transform: translate(calc(-50% - 1.5em));
+      -o-transform: translate(calc(-50% - 1.5em));
+}
   }
 }
