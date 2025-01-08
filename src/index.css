@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Jetbrains Mono";
+    /* src: local("NovaMono") url("../src/assets/fonts/IOSEVKA-MEDIUM.TTF");
+   */
+   src: local("Jetbrains Mono") url("../src/assets/fonts/jetbrainsmono-regular.ttf");
+  }
+  @font-face {
+    font-family: "Fira Code";
+    /* src: local("NovaMono") url("../src/assets/fonts/IOSEVKA-MEDIUM.TTF");
+   */
+   src: local("Fira Code SemiBold") url("../src/assets/fonts/firacode-semibold.ttf");
+  }
+  .animate-rotate {
+    transition: all;
+    animation: animate-rotate;
+    -webkit-animation: animate-rotate;
+  }
+  @keyframes animate-rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(180deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+@layer components {
+  #carousel {
+    max-width: 600px;
+    width: 80%;
+    overflow: hidden;
+    mask: linear-gradient(90deg, transparent, #fff 30%, #fff 80%, transparent);
+
+  }
+  #carousel > div {
+    width: max-content;
+    padding:  1em 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 3em;
+  }
+  @keyframes move {
+    to {
+      transform: translate(calc(-50% - 1.5em));
+    }
+  }
+}
