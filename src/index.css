@@ -7,13 +7,13 @@
     font-family: "Jetbrains Mono";
     /* src: local("NovaMono") url("../src/assets/fonts/IOSEVKA-MEDIUM.TTF");
    */
-   src: local("Jetbrains Mono") url("../src/assets/fonts/jetbrainsmono-regular.ttf");
+    src: local("Jetbrains Mono") url("../src/assets/fonts/jetbrainsmono-regular.ttf");
   }
   @font-face {
-    font-family: "Fira Code";
+    font-family: "Iosevka Slan";
     /* src: local("NovaMono") url("../src/assets/fonts/IOSEVKA-MEDIUM.TTF");
    */
-   src: local("Fira Code SemiBold") url("../src/assets/fonts/firacode-semibold.ttf");
+    src: local("Iosevka Slab") url("../src/assets/fonts/IosevkaSlab-Regular.ttf");
   }
   .animate-rotate {
     transition: all;
@@ -34,28 +34,43 @@
 }
 
 @layer components {
-  #carousel {
-    max-width: 600px;
-    width: 80%;
-    overflow: hidden;
-    mask: linear-gradient(90deg, transparent, #fff 30%, #fff 80%, transparent);
-
+  #logos {
+    width: 70%;
+    &::after,
+    &::before {
+      top: 0;
+      width: 250px;
+      height: 100%;
+      content: "";
+      z-index: 2;
+      display: block;
+      position: absolute;
+    }
+    &::before {
+      left: 0;
+      background: linear-gradient(to left, #282c3400, #282c34);
+    }
+    &::after {
+      right: 0;
+      background: linear-gradient(to right, #282c3400, #282c34);
+    }
+    & > div {
+      margin-top: 20px;
+      display: inline-block;
+      animation: slide 15s linear infinite;
+      -webkit-animation: slide 15s linear infinite;
+      & > img {
+        display: inline-block;
+        margin: 20px;
+      }
+    }
   }
-  #carousel > div {
-    width: max-content;
-    padding:  1em 0;
-    display: flex;
-    align-items: center;
-    flex-wrap: nowrap;
-    gap: 3em;
-  }
-  @keyframes move {
+  @keyframes slide {
+    from {
+      transform: translateX(0);
+    }
     to {
-      transform: translate(calc(-50% - 1.5em));
-      -webkit-transform: translate(calc(-50% - 1.5em));
-      -moz-transform: translate(calc(-50% - 1.5em));
-      -ms-transform: translate(calc(-50% - 1.5em));
-      -o-transform: translate(calc(-50% - 1.5em));
-}
+      transform: translateX(-100%);
+    }
   }
 }

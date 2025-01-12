@@ -6,7 +6,7 @@ export default {
   ],
   theme: {
     extend: {
-      fontFamily: { "JetbrainsMono": "Jetbrains Mono", "FiraCode": "Fira Code" },
+      fontFamily: { "JetbrainsMono": "Jetbrains Mono", "IosevkaSlab": "Iosevka Slab" },
       colors: {
         "primary": "#21252B",
         "secondary": "#9DA5B4",

@@ -1,5 +1,6 @@
 import Filebar from "../Sidebar/Filebar";
 import Sidebar from "../Sidebar/Sidebar";
+import Carousel from "./Carousel";
 
 function createItem(item) {
   return (
@@ -32,13 +33,6 @@ export default function Main() {
     }
   ];
   const techs = ["js", "react", "node", "next", "tailwind", "mongo", "graphql", "socket"];
-  const carouselInner = document.querySelector("#carousel div");
-  const carouselContent = Array.from(document.querySelectorAll("#carousel img"));
-  carouselContent.forEach(item => {
-    const duplicatedItems = item.cloneNode(true);
-    carouselInner.appendChild(duplicatedItems);
-    carouselInner.style.animation = "move 12s linear infinite";
-  });
   return (
     <main className="h-[calc(100%-2.5rem)] w-full bg-tertiary flex font-JetbrainsMono text-[#ccc]">
       <Sidebar />
@@ -52,23 +46,17 @@ export default function Main() {
             Full Stack Web Developer. Working with JS ❤️
           </p>
           <p className="text-2xl mt-4 flex items-center"><span className="size-3 bg-secondary inline-block rounded-full mr-4"></span>Web Designer, Team Manager, Programming Teacher</p>
-          <div id="carousel" className="self-center flex gap-10 items-center mt-4">
-            <div>
-              {techs.map((tech) => (
-                <img className="h-16" key={tech} src={`/src/assets/img/${tech}.png`} alt={tech} />
-              ))}
-            </div>
-          </div>
+          <Carousel techs={techs} />
         </div>
         <div className="pl-20">
           <h2 className="text-3xl mb-6 -ml-5">Currently Working On:</h2>
-          <ul className="font-FiraCode font-semibold">
+          <ul className="font-IosevkaSlab font-semibold">
             {data.map(createItem)}
           </ul>
         </div>
         <div>
           <h2 className="text-3xl mb-6 -ml-5">Read More, Written by Me:</h2>
-          <ul className="font-FiraCode font-semibold">
+          <ul className="font-IosevkaSlab font-semibold">
             {articles.map(createItem)}
           </ul>
         </div>
