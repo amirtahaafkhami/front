@@ -10,7 +10,8 @@ export default {
       colors: {
         "primary": "#21252B",
         "secondary": "#9DA5B4",
-        "tertiary": "#282C34"
+        "tertiary": "#282C34",
+        "selector": "#D19A66",
       },
       animation: {
         'spin-slow': 'spin 5s linear infinite',

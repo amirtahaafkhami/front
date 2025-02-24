@@ -7,13 +7,13 @@
     font-family: "Jetbrains Mono";
     /* src: local("NovaMono") url("../src/assets/fonts/IOSEVKA-MEDIUM.TTF");
    */
-    src: local("Jetbrains Mono") url("../src/assets/fonts/jetbrainsmono-regular.ttf");
+    src: local("Jetbrains Mono"), url("../src/assets/fonts/jetbrainsmono-regular.ttf");
   }
   @font-face {
-    font-family: "Iosevka Slan";
+    font-family: "Iosevka Slab";
     /* src: local("NovaMono") url("../src/assets/fonts/IOSEVKA-MEDIUM.TTF");
    */
-    src: local("Iosevka Slab") url("../src/assets/fonts/IosevkaSlab-Regular.ttf");
+    src: local("Iosevka Slab Light"), url("../src/assets/fonts/IosevkaSlab-Light.ttf");
   }
   .animate-rotate {
     transition: all;
@@ -30,6 +30,12 @@
     100% {
       transform: rotate(360deg);
     }
+  }
+}
+
+@layer utilities {
+  .selector {
+    @apply text-selector;
   }
 }
 
@@ -72,5 +78,43 @@
     to {
       transform: translateX(-100%);
     }
+  }
+  #button {
+    @apply font-JetbrainsMono mt-6 ml-4 text-[#61A9D575] hover:text-[#61A9D5] cursor-pointer inline-block transition-colors duration-200;
+  }
+  #button::before {
+    content: "";
+    height: 2px;
+    border-radius: 100px;
+    width: 100%;
+    background: #61a9d5;
+    display: block;
+    position: relative;
+    top: 30px;
+    transform: scaleX(0);
+    -webkit-transform: scaleX(0);
+    -moz-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    -o-transform: scaleX(0);
+    transition: transform .2s linear;
+    -webkit-transition: transform .2s linear;
+    -moz-transition: transform .2s linear;
+    -ms-transition: transform .2s linear;
+    -o-transition: transform .2s linear;
+    transform-origin: left;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    -ms-border-radius: 100px;
+    -o-border-radius: 100px;
+}
+  #button:hover::before {
+    transform: scaleX(1);
+    -webkit-transform: scaleX(1);
+    -moz-transform: scaleX(1);
+    -ms-transform: scaleX(1);
+    -o-transform: scaleX(1);
+  }
+  #button:hover svg {
+    margin-left: 20px;
   }
 }

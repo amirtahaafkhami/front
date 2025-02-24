@@ -14,14 +14,19 @@ function createItem(item) {
 export default function Main() {
   const data = [
     {
-      title: "Test 1",
+      title: "Designers Forum",
       link: "#",
-      description: "Test Proj :)"
+      description: "A platform for designers"
     },
     {
-      title: "Test 2",
+      title: "Web dev 1",
       link: "#",
-      description: "yet another Test Proj :)"
+      description: "Main projects of my course"
+    },
+    {
+      title: "Which Course?",
+      link: "#",
+      description: "My reviews on different courses",
     }
   ];
   const articles = [
@@ -30,13 +35,16 @@ export default function Main() {
     },
     {
       title: "What the hell is going on today, after AI???"
+    },
+    {
+      title: "How to scape the COURSE HELL?"
     }
   ];
   const techs = ["js", "react", "node", "next", "tailwind", "mongo", "graphql", "socket"];
   return (
-    <main className="h-[calc(100%-2.5rem)] w-full bg-tertiary flex font-JetbrainsMono text-[#ccc]">
-      <Sidebar />
-      <Filebar />
+    <main className="w-full bg-tertiary flex font-JetbrainsMono text-[#ccc]">
+      {/* <Sidebar /> */}
+      {/* <Filebar /> */}
       <div className="size-full grid grid-rows-2 grid-cols-2">
         <div className="p-10 col-span-2 flex flex-col">
           <h1 className="text-6xl">
@@ -45,19 +53,23 @@ export default function Main() {
           <p className="text-3xl mt-5">
             Full Stack Web Developer. Working with JS ❤️
           </p>
-          <p className="text-2xl mt-4 flex items-center"><span className="size-3 bg-secondary inline-block rounded-full mr-4"></span>Web Designer, Team Manager, Programming Teacher</p>
+          <p className="text-2xl mt-4 flex items-center"><span className="size-3 bg-secondary inline-block rounded-full mr-4"></span>Web Designer, Team Manager, Programming Teacher
+            {/* {<!-- <a href="#" className="text-[#61A9D5] ml-6 cursor-pointer">Who am I?</a> -->} */}
+          </p>
           <Carousel techs={techs} />
         </div>
         <div className="pl-20">
           <h2 className="text-3xl mb-6 -ml-5">Currently Working On:</h2>
           <ul className="font-IosevkaSlab font-semibold">
             {data.map(createItem)}
+            <a id="button">See more projects...<span className="inline-block relative left-0"><svg className="size-5 inline-block ml-3 transition-all"><use xlinkHref="/src/assets/img/sprite.svg#arrow-right"></use></svg></span></a>
           </ul>
         </div>
         <div>
           <h2 className="text-3xl mb-6 -ml-5">Read More, Written by Me:</h2>
           <ul className="font-IosevkaSlab font-semibold">
             {articles.map(createItem)}
+            <a id="button">Read more articles...<span className="inline-block relative left-0"><svg className="size-5 inline-block ml-3 transition-all"><use xlinkHref="/src/assets/img/sprite.svg#arrow-right"></use></svg></span></a>
           </ul>
         </div>
       </div>
